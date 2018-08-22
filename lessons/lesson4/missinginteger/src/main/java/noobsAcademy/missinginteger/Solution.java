@@ -17,9 +17,10 @@ public class Solution {
     public static int solution(int[] A) {
 	int smallestPositiveInt = 1;
 	Arrays.sort(A);
-
-	if (A[0] != 1) {
+	if (A[0] != 1 && A[0] > 0) {
 	    return smallestPositiveInt;
+	} else if (A[0] == 1 && A.length == 1) {
+	    return 2;
 	}
 
 	for (int i = 1; i < A.length - 1; i++) {
@@ -29,11 +30,11 @@ public class Solution {
 		    return A[i] + 1;
 		} else {
 		    if (nextConsecutiveNumber >= smallestPositiveInt) {
-			smallestPositiveInt = nextConsecutiveNumber;
+			smallestPositiveInt = nextConsecutiveNumber + 1;
 		    }
 		}
 	    }
 	}
-	return smallestPositiveInt + 1;
+	return smallestPositiveInt;
     }
 }
