@@ -1,5 +1,7 @@
 package noobsAcademy.distinc;
 
+import java.util.Arrays;
+
 /**
  * Write a function
  * 
@@ -22,7 +24,15 @@ package noobsAcademy.distinc;
  */
 public class Solution {
     public static int solution(int[] A) {
-	int distincIntegers = 0;
+	int distincIntegers = A.length > 0 ? 1 : 0;
+
+	Arrays.sort(A);
+
+	for (int i = 0; i < A.length - 1; i++) {
+	    if (A[i] != A[i + 1]) {
+		distincIntegers++;
+	    }
+	}
 	return distincIntegers;
     }
 }
