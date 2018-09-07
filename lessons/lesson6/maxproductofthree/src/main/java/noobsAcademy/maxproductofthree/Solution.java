@@ -1,5 +1,7 @@
 package noobsAcademy.maxproductofthree;
 
+import java.util.Arrays;
+
 /**
  * A non-empty array A consisting of N integers is given. The product of triplet
  * (P, Q, R) equates to A[P] * A[Q] * A[R] (0 ≤ P < Q < R < N).
@@ -33,6 +35,14 @@ package noobsAcademy.maxproductofthree;
  */
 public class Solution {
     public static int solution(int[] A) {
-	return -1;
+	Arrays.sort(A);
+
+	int maximalsAtLeft = A[0] * A[1] * A[A.length - 1];
+	int maximalsAtRight = A[A.length - 1] * A[A.length - 2] * A[A.length - 3];
+
+	if (maximalsAtLeft > maximalsAtRight) {
+	    return maximalsAtLeft;
+	}
+	return maximalsAtRight;
     }
 }
