@@ -25,19 +25,19 @@ public class SolutionTest extends TestCase {
 
     public void testApp() {
         int[] A = new int[]{1, 5, 2, 1, 4, 0};
-        assertEquals(11, Solution.solution(A));
+        assertEquals(11, SolutionS.solution(A));
     }
 
 
     public void testApp2() {
         int[] A = new int[]{1, 2147483647, 0};
-        assertEquals(2, Solution.solution(A));
+        assertEquals(2, SolutionS.solution(A));
     }
 
 
     public void testApp3() {
         int[] A = new int[]{0, 1, 2, 3, 0};
-        assertEquals(8, SolutionI.solution(A));
+        assertEquals(8, SolutionS.solution(A));
     }
 
 }
